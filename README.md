@@ -19,3 +19,19 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=charitha-jayarathne&show_icons=true&locale=en&layout=compact" alt="charitha-jayarathne" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=charitha-jayarathne&show_icons=true&locale=en" alt="charitha-jayarathne" /></p>
+
+## Projects
+
+### SKW Photography
+- Tech: MERN (MongoDB, Express, React, Node) + Stripe for payments
+- Description: A fully functional website for a photography store — browse galleries, add prints or digital downloads to a cart, checkout with Stripe, and manage content through an admin dashboard.
+- Key features:
+	- Responsive photo galleries with categories, search and tags
+	- User authentication and profiles (JWT)
+	- Shopping cart, order history, and Stripe payment integration
+	- Admin dashboard for uploading images, managing products and orders
+	- Image optimization, server-side pagination and filtering
+	- Optional cloud storage support (AWS S3 or Cloudinary)
+- Repo: https://github.com/charitha-jayarathne/skw-photography (placeholder)
+- Live demo: https://skw-photography.example.com (placeholder)
+
