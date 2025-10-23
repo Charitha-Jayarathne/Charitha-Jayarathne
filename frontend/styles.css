@@ -1,0 +1,115 @@
+/* SKW Photography - frontend styles
+   Basic layout, responsive gallery grid, cards, buttons, forms, and utility classes.
+*/
+
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --card:#0b1220; /* darker card */
+  --muted:#94a3b8; /* slate-400 */
+  --accent:#06b6d4; /* cyan-400 */
+  --white:#ffffff;
+  --gap:1rem;
+  --max-width:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,var(--bg),#071024);
+  color:var(--white);
+  line-height:1.4;
+}
+
+.container{
+  width:calc(100% - 2rem);
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:2rem 1rem;
+}
+
+/* Header */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+  margin-bottom:1.5rem;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.logo img{height:40px;width:40px;border-radius:6px}
+.site-title{font-weight:700;letter-spacing:0.2px}
+
+/* Gallery grid */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  gap:1rem;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.card .meta{
+  padding:0.75rem 0.9rem;
+}
+.card .title{font-weight:600;margin:0 0 .25rem}
+.card .subtitle{font-size:.9rem;color:var(--muted);margin:0}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#042028;
+  padding:.5rem .75rem;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+.btn.secondary{
+  background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.06)
+}
+
+/* Forms */
+.form-row{display:flex;flex-direction:column;gap:.5rem}
+.input, .select, .textarea{
+  padding:.6rem .75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);
+}
+
+/* Lightbox / modal */
+.modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.7);z-index:60;padding:1rem;visibility:hidden;opacity:0;transform:scale(.98);transition:all .18s ease;
+}
+.modal.open{visibility:visible;opacity:1;transform:scale(1)}
+.modal .content{max-width:900px;width:100%;background:var(--card);border-radius:10px;overflow:hidden}
+.modal img{width:100%;height:auto;display:block}
+
+/* Utilities */
+.flex{display:flex}
+.grid{display:grid}
+.hidden{display:none}
+.text-muted{color:var(--muted)}
+.center{text-align:center}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .card img{height:140px}
+  .header{flex-direction:column;align-items:flex-start}
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gift Shop Management — SKW Gift Store</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="container header">
+    <div class="logo">
+      <img src="https://via.placeholder.com/80x80.png?text=GIFT" alt="Gift Shop">
+      <div>
+        <div class="site-title">Gift Shop</div>
+        <div class="text-muted" style="font-size:0.9rem">Gift Shop Management</div>
+      </div>
+    </div>
+    <div class="controls flex" style="gap:.5rem;align-items:center">
+      <input id="searchInput" class="input" placeholder="Search orders or customer..." style="width:240px">
+      <select id="statusFilter" class="select">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="processing">Processing</option>
+        <option value="shipped">Shipped</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+      <button id="newOrderBtn" class="btn">+ New Order</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+  <h2 style="margin-top:0">Recent Gift Orders</h2>
+      <div id="ordersCount" class="text-muted" style="margin-bottom:.5rem">0 orders</div>
+      <div id="ordersTable" class="card" style="padding:0;overflow:auto">
+        <!-- table goes here -->
+        <table style="width:100%;border-collapse:collapse;min-width:720px">
+          <thead style="background:rgba(255,255,255,0.02);">
+            <tr>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Order #</th>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Customer</th>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Items</th>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Total</th>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Status</th>
+              <th style="text-align:left;padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)">Date</th>
+              <th style="padding:.75rem;border-bottom:1px solid rgba(255,255,255,0.03)"></th>
+            </tr>
+          </thead>
+          <tbody id="ordersTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="content">
+      <div style="padding:1rem;display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modalTitle" style="margin:0">Order Details</h3>
+        <button id="closeModal" class="btn secondary">Close</button>
+      </div>
+      <div id="modalBody" style="padding:1rem;border-top:1px solid rgba(255,255,255,0.03)"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
